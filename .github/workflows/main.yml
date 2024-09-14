@@ -4,19 +4,13 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
  
     - name: Add MSBuild to PATH
-      uses: actions/checkout@v4
-      with:
-           repository: microsoft/setup-msbuild@v2
-           path: setup-msbuild@v2
-           
+      uses: microsoft/setup-msbuild@v2
+       
     - name: setup vsdevenv
-      uses: actions/checkout@v4
-      with:
-           repository: seanmiddleditch/gha-setup-vsdevenv@master
-           path: gha-setup-vsdevenv@master
+      uses: seanmiddleditch/gha-setup-vsdevenv@master
  
     - name: Install Qt
       run: |
